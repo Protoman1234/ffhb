@@ -8,10 +8,7 @@ const compression = require('compression');
 
 const PORT = process.env.PORT || 8080;
 
-app.use(compression({
- level: 9,
-threshold: 0
-}))
+app.use(compression())
 
 app.disable('trust proxy');
 app.get('/', authenticate, params, proxy);
